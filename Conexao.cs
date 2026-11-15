@@ -8,7 +8,7 @@ namespace Delivery
     public class Conexao
     {
 
-        private static readonly string stringConexao = "Server=localhost;Port=3306;Database=DB_Delivery;Uid=root;Pwd=CLSena@2302;";
+        private static readonly string stringConexao = "Server=localhost;Port=3306;Database=DB_Delivery;Uid=root;Pwd=SUA_SENHA;";
 
         public static MySqlConnection ObterConexao()
         {
