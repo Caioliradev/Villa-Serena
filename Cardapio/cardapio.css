@@ -1,0 +1,243 @@
+:root {
+    --card: #16382f;
+    --card-borda: #285247;
+}
+
+[data-tema="claro"] {
+    --card: #ffffff;
+    --card-borda: #eadfd2;
+}
+
+.menu a.ativo {
+    color: var(--texto);
+}
+
+.cardapio {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+}
+
+.cardapio-topo {
+    margin-bottom: 36px;
+}
+
+.cardapio-topo h1 {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 16px;
+}
+
+.cardapio-topo p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-mudo);
+    max-width: 420px;
+}
+
+
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.filtro {
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 22px;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--texto);
+    transition: border-color 0.2s, background-color 0.2s;
+}
+
+.filtro:hover {
+    border-color: var(--destaque);
+}
+
+.filtro.ativo {
+    background: var(--btn-bg);
+    color: var(--btn-texto);
+    border-color: var(--btn-bg);
+}
+
+
+.grade-pratos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.prato {
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+    animation: surgir 0.4s ease;
+}
+
+.prato:hover {
+    transform: translateY(-4px);
+    border-color: var(--destaque);
+}
+
+.prato-img {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1c1c1c, #2a2118);
+}
+
+[data-tema="claro"] .prato-img {
+    background: linear-gradient(135deg, #eeeeee, #f3e7d3);
+}
+
+.prato-emoji {
+    font-size: 56px;
+}
+
+.prato-img img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prato-info {
+    padding: 20px;
+}
+
+.prato-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.prato-info h3 {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.prato-preco {
+    color: var(--destaque);
+    font-size: 15px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.prato-info p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--texto-mudo);
+}
+
+@keyframes surgir {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 768px) {
+    .cardapio {
+        padding: 36px 20px 56px;
+    }
+
+    .cardapio-topo h1 {
+        font-size: 38px;
+    }
+
+    .grade-pratos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.ferramentas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.busca {
+    flex: 1 1 280px;
+}
+
+.busca input,
+.ferramentas select {
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--texto);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    padding: 12px 18px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.busca input {
+    width: 100%;
+}
+
+.busca input:focus,
+.ferramentas select:focus {
+    border-color: var(--destaque);
+}
+
+.ferramentas select {
+    cursor: pointer;
+}
+
+.ferramentas select option {
+    background: var(--card);
+    color: var(--texto);
+}
+
+.resultado-info {
+    min-height: 18px;
+    margin-bottom: 24px;
+    font-size: 13px;
+    color: var(--texto-mudo);
+}
+
+.sem-resultado {
+    grid-column: 1 / -1;
+    padding: 48px 0;
+    text-align: center;
+    font-size: 15px;
+    color: var(--texto-mudo);
+}
+
+.btn-adicionar {
+    width: 100%;
+    margin-top: 16px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--btn-texto);
+    background: var(--btn-bg);
+    border: 0;
+    border-radius: 999px;
+    padding: 11px 16px;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.btn-adicionar:hover {
+    transform: scale(1.02);
+}
+
+.btn-adicionar.adicionado {
+    opacity: 0.75;
+}

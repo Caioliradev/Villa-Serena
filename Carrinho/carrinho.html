@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho | Villa Serena</title>
+    <script>
+        try {
+            var t = localStorage.getItem('tema');
+            if (t) document.documentElement.setAttribute('data-tema', t);
+        } catch (e) { }
+    </script>
+    <link rel="stylesheet" href="../Entrada/style.css">
+    <link rel="stylesheet" href="carrinho.css">
+    <script src="../Entrada/comum.js" defer></script>
+    <script src="carrinho.js" defer></script>
+    <link rel="icon" type="image/png" href="../Entrada/image/VILA.png?v=2">
+</head>
+
+<body>
+    <header class="header header-transparente">
+        <a href="../Entrada/index.html" class="logo">
+            <img src="image/Icon-Branco.png" alt="Villa Serena">
+            <span>Villa Serena</span>
+        </a>
+
+        <button class="btn-menu" id="btnMenu" aria-label="Abrir menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="menu">
+            <a href="../Entrada/index.html">Início</a>
+            <a href="../Cardapio/cardapio.html">Cardápio</a>
+            <a href="../Sobre/sobre.html">Sobre</a>
+            <a href="../Contato/contato.html">Contato</a>
+        </nav>
+
+        <div class="acoes">
+            <a href="../Carrinho/carrinho.html" class="btn-carrinho" aria-label="Carrinho de compras">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M6 7h12l-1 13H7L6 7z"></path>
+                    <path d="M9 7a3 3 0 0 1 6 0"></path>
+                </svg>
+                <span class="carrinho-contador" hidden>0</span>
+            </a>
+
+            <a href="../Perfil/perfil.html" class="link-perfil" id="linkPerfil">
+                <span class="avatar" id="avatarMini">V</span>
+                <span id="nomePerfil">Meu perfil</span>
+            </a>
+
+            <a href="../Cadastro/cadastro.html#entrar" class="link-entrar" data-visitante>Entrar</a>
+            <a href="../Cadastro/cadastro.html#cadastro" class="btn-pilula" data-visitante>
+                Cadastrar
+                <span class="seta">↗</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="carrinho">
+        <section class="carrinho-topo">
+            <span class="selo">
+                <span class="selo-novo">Pedido</span>
+                Revise antes de finalizar
+            </span>
+            <h1>Seu carrinho</h1>
+        </section>
+
+        <section class="carrinho-grade">
+            <div class="carrinho-lista" id="listaItens"></div>
+
+            <aside class="resumo" id="resumo">
+                <span class="info-rotulo">Resumo do pedido</span>
+
+                <div class="resumo-linha">
+                    <span>Itens</span>
+                    <span id="resumoQtd">0</span>
+                </div>
+                <div class="resumo-linha resumo-total">
+                    <span>Total</span>
+                    <span id="resumoTotal">R$ 0,00</span>
+                </div>
+                
+                <label for="pagamento">Forma de pagamento</label>
+                <select id="pagamento">
+                    <option value="">Escolha...</option>
+                    <option value="pix">Pix</option>
+                    <option value="cartao_credito">Cartão de crédito</option>
+                    <option value="cartao_debito">Cartão de débito</option>
+                    <option value="dinheiro">Dinheiro</option>
+                </select>
+
+                <label for="obs">Observações (opcional)</label>
+                <textarea id="obs" rows="3" placeholder="Sem cebola, ponto da carne..."></textarea>
+
+                <button type="button" class="btn-pilula form-enviar" id="btnFinalizar">
+                    Finalizar pedido
+                    <span class="seta">↗</span>
+                </button>
+
+                <p class="aviso" id="aviso" role="status"></p>
+                <a href="../Cardapio/cardapio.html" class="continuar">← Continuar escolhendo</a>
+            </aside>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+
+            <div class="rodape-marca">
+                <a href="../Entrada/index.html" class="logo">
+                    <img src="../Entrada/image/Icon-Branco.png" alt="Villa Serena">
+                    <span>Villa Serena</span>
+                </a>
+                <p>Sabores que trazem serenidade. Pratos preparados na hora, com ingredientes frescos e muito carinho.
+                </p>
+            </div>
+
+            <nav class="rodape-col">
+                <h3>Navegue</h3>
+                <a href="../Entrada/index.html">Início</a>
+                <a href="../Cardapio/cardapio.html">Cardápio</a>
+                <a href="../Sobre/sobre.html">Sobre</a>
+                <a href="../Contato/contato.html">Contato</a>
+                <a href="../Reserva/reserva.html">Reserva mesa</a>
+            </nav>
+
+            <div class="rodape-col">
+                <h3>Visite</h3>
+                <p>Rua logo ali, 123<br> centro</p>
+                <p>Seg a qui: 11h às 23h<br>
+                    Sex e sáb: 11h à 00h<br>
+                    Dom: 11h às 22h
+                </p>
+            </div>
+
+
+            <div class="rodape-col">
+                <h3>Fale com a gente</h3>
+                <a href="tel:+5511999999999">(11) 99999-9999</a>
+                <a href="mailto:contato@exemplo.com">contato@exemplo.com</a>
+                <div class="rodape-redes">
+                    <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+                        <img src="../Entrada/image/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+                        <img src="../Entrada/image/facebook.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rodape-base">
+            <p>&copy; 2023 Villa Serena. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+:root {
+    --card: #16382f;
+    --card-borda: #285247;
+}
+
+[data-tema="claro"] {
+    --card: #ffffff;
+    --card-borda: #eadfd2;
+}
+
+.menu a.ativo {
+    color: var(--texto);
+}
+
+.contato {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+}
+
+
+.contato-topo {
+    max-width: 620px;
+    margin-bottom: 48px;
+}
+
+.contato-topo h1 {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 16px;
+}
+
+.contato-topo p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-mudo);
+}
+
+
+.contato-grade {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 32px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+.contato-infos {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-card {
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 20px;
+    padding: 22px 24px;
+    transition: border-color 0.25s;
+}
+
+.info-card:hover {
+    border-color: var(--destaque);
+}
+
+.info-rotulo {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--texto-suave);
+}
+
+.info-card a {
+    color: var(--texto-suave);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.info-card a:hover {
+    color: var(--destaque);
+}
+
+.redes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.rede {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px 8px 10px;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    font-size: 14px;
+    transition: border-color 0.2s, color 0.3s ease;
+}
+
+.rede:hover {
+    border-color: var(--destaque);
+}
+
+.rede img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+}
+
+.contato-form {
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 24px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.contato-form h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.contato-form label {
+    font-size: 13px;
+    color: var(--texto-mudo);
+    margin-bottom: 6px;
+}
+
+.contato-form input,
+.contato-form select,
+.contato-form textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--texto);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.contato-form textarea {
+    resize: vertical;
+}
+
+.contato-form input:focus,
+.contato-form select:focus,
+.contato-form textarea:focus {
+    border-color: var(--destaque);
+}
+
+.contato-form select option {
+    background: var(--card);
+    color: var(--texto);
+}
+
+.form-enviar {
+    align-self: flex-start;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+
+.contato-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 380px;
+    border: 1px solid var(--card-borda);
+    border-radius: 20px;
+}
+
+
+html:not([data-tema="claro"]) .contato-mapa iframe {
+    filter: invert(0.92) hue-rotate(180deg);
+}
+
+
+.revelar {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.revelar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+    .contato {
+        padding: 36px 20px 56px;
+    }
+
+    .contato-topo {
+        margin-bottom: 32px;
+    }
+
+    .contato-topo h1 {
+        font-size: 38px;
+    }
+
+    .contato-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .contato-form {
+        padding: 24px 20px;
+    }
+
+    .contato-mapa iframe {
+        height: 300px;
+    }
+}
+
+
+.rodape {
+    border-top: 1px solid var(--borda);
+    background: var(--bg);
+    color: var(--texto);
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.rodape-marca p {
+    margin-top: 16px;
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-mudo);
+}
+
+.rodape-col h3 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 16px;
+}
+
+.rodape-col a,
+.rodape-col p {
+    display: block;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-suave);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.rodape-col a:hover {
+    color: var(--destaque);
+}
+
+.rodape-redes {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.rodape-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    transition: border-color 0.2s;
+}
+
+.rodape-redes a:hover {
+    border-color: var(--destaque);
+}
+
+.rodape-redes img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.rodape-base {
+    border-top: 1px solid var(--borda);
+}
+
+.rodape-base p {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    font-size: 13px;
+    color: var(--texto-mudo);
+}
+
+@media (max-width: 900px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        padding: 40px 20px 28px;
+        gap: 32px;
+    }
+
+    .rodape-base p {
+        padding: 18px 20px;
+    }
+}
+
+.header-transparente {
+    margin-bottom: -69px; 
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(var(--bg-rgb), 0.7), rgba(var(--bg-rgb), 0));
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-transparente.rolou,
+.header-transparente.aberto {
+    background-color: var(--bg);
+    background-image: none;
+    box-shadow: 0 1px 0 var(--borda);
+}
+
+.header-transparente + .hero {
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .header-transparente {
+        margin-bottom: -60px;
+    }
+
+    .header-transparente + .hero {
+        min-height: auto;
+    }
+}

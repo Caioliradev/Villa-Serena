@@ -1,0 +1,213 @@
+:root {
+    --card: #16382f;
+    --card-borda: #285247;
+}
+
+[data-tema="claro"] {
+    --card: #ffffff;
+    --card-borda: #eadfd2;
+}
+
+.prato {
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.25s, border-color 0.25s;
+    animation: surgir 0.4s ease;
+}
+
+.ferramentas select option {
+    background: var(--card);
+    color: var(--texto);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.perfil {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+}
+
+.perfil-topo {
+    margin-bottom: 36px;
+}
+
+.perfil-topo h1 {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.05;
+}
+
+.perfil-grade {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.perfil-cartao,
+.perfil-form,
+.sem-login {
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.perfil-cartao {
+    text-align: center;
+}
+
+.avatar-grande {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 16px;
+    font-size: 36px;
+}
+
+.perfil-cartao h2 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.perfil-email {
+    font-size: 13px;
+    color: var(--texto-mudo);
+    margin-bottom: 18px;
+    word-break: break-all;
+}
+
+.perfil-pedidos {
+    font-size: 14px;
+    color: var(--texto-suave);
+    margin-bottom: 20px;
+}
+
+.perfil-pedidos strong {
+    color: var(--destaque);
+}
+
+.perfil-cartao .btn-contorno {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.btn-sair {
+    margin-top: 10px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    color: #e5484d;
+    text-decoration: underline;
+}
+
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.perfil-form h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo label {
+    font-size: 13px;
+    color: var(--texto-mudo);
+    margin-bottom: 6px;
+}
+
+.campo input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--texto);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.campo input:focus {
+    border-color: var(--destaque);
+}
+
+.campo input:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.form-enviar {
+    align-self: flex-start;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.aviso {
+    min-height: 20px;
+    margin-top: 14px;
+    font-size: 13px;
+}
+
+.aviso.ok {
+    color: #2da44e;
+}
+
+.sem-login {
+    max-width: 520px;
+    text-align: center;
+}
+
+.sem-login h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.sem-login p {
+    font-size: 14px;
+    color: var(--texto-mudo);
+    margin-bottom: 24px;
+}
+
+.sem-login .btn-pilula {
+    display: inline-flex;
+}
+
+@media (max-width: 768px) {
+    .perfil {
+        padding: 36px 20px 56px;
+    }
+
+    .perfil-topo h1 {
+        font-size: 38px;
+    }
+
+    .perfil-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .perfil-cartao,
+    .perfil-form,
+    .sem-login {
+        padding: 24px 20px;
+    }
+}

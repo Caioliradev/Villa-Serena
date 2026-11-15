@@ -1,0 +1,359 @@
+:root {
+    --card: #16382f;
+    --card-borda: #285247;
+    color-scheme: dark;
+}
+
+[data-tema="claro"] {
+    --card: #ffffff;
+    --card-borda: #eadfd2;
+    color-scheme: light;
+}
+
+.reserva {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px 80px;
+}
+
+
+.reserva-topo {
+    max-width: 620px;
+    margin-bottom: 48px;
+}
+
+.reserva-topo h1 {
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 1.05;
+    margin-bottom: 16px;
+}
+
+.reserva-topo p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-mudo);
+}
+
+.reserva-grade {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+
+.reserva-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 18px;
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.campo.cheio {
+    grid-column: 1 / -1;
+}
+
+.campo.cheio:last-child {
+    margin-bottom: 0;
+}
+
+.campo label {
+    font-size: 13px;
+    color: var(--texto-mudo);
+    margin-bottom: 6px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--texto);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.campo textarea {
+    resize: vertical;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--destaque);
+}
+
+.campo select option {
+    background: var(--card);
+    color: var(--texto);
+}
+
+.campo select:disabled {
+    opacity: 0.5;
+}
+
+.form-enviar {
+    align-self: flex-start;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.aviso {
+    min-height: 20px;
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.aviso.erro {
+    color: #e5484d;
+}
+
+.aviso.ok {
+    color: #2da44e;
+}
+
+
+.reserva-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 96px;
+}
+
+.info-card {
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 20px;
+    padding: 22px 24px;
+}
+
+.info-rotulo {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 12px;
+}
+
+.info-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--texto-suave);
+}
+
+.info-card a {
+    color: var(--destaque);
+}
+
+.passos {
+    list-style: none;
+}
+
+.passos li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--texto-suave);
+    margin-bottom: 12px;
+}
+
+.passos li:last-child {
+    margin-bottom: 0;
+}
+
+.num {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--destaque);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--destaque);
+}
+
+
+@media (max-width: 768px) {
+    .reserva {
+        padding: 36px 20px 56px;
+    }
+
+    .reserva-topo {
+        margin-bottom: 32px;
+    }
+
+    .reserva-topo h1 {
+        font-size: 38px;
+    }
+
+    .reserva-grade {
+        grid-template-columns: 1fr;
+    }
+
+    .reserva-form {
+        grid-template-columns: 1fr;
+        padding: 24px 20px;
+    }
+
+    .reserva-lateral {
+        position: static;
+    }
+}
+
+
+.rodape {
+    border-top: 1px solid var(--borda);
+    background: var(--bg);
+    color: var(--texto);
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.rodape-marca p {
+    margin-top: 16px;
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-mudo);
+}
+
+.rodape-col h3 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 16px;
+}
+
+.rodape-col a,
+.rodape-col p {
+    display: block;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-suave);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.rodape-col a:hover {
+    color: var(--destaque);
+}
+
+.rodape-redes {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.rodape-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    transition: border-color 0.2s;
+}
+
+.rodape-redes a:hover {
+    border-color: var(--destaque);
+}
+
+.rodape-redes img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.rodape-base {
+    border-top: 1px solid var(--borda);
+}
+
+.rodape-base p {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    font-size: 13px;
+    color: var(--texto-mudo);
+}
+
+@media (max-width: 900px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        padding: 40px 20px 28px;
+        gap: 32px;
+    }
+
+    .rodape-base p {
+        padding: 18px 20px;
+    }
+}
+
+.header-transparente {
+    margin-bottom: -69px; 
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(var(--bg-rgb), 0.7), rgba(var(--bg-rgb), 0));
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-transparente.rolou,
+.header-transparente.aberto {
+    background-color: var(--bg);
+    background-image: none;
+    box-shadow: 0 1px 0 var(--borda);
+}
+
+.header-transparente + .hero {
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .header-transparente {
+        margin-bottom: -60px;
+    }
+
+    .header-transparente + .hero {
+        min-height: auto;
+    }
+}

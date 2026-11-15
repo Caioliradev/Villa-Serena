@@ -1,0 +1,366 @@
+:root {
+    --card: #16382f;
+    --card-borda: #285247;
+}
+
+[data-tema="claro"] {
+    --card: #ffffff;
+    --card-borda: #eadfd2;
+}
+
+.conta {
+    min-height: calc(100vh - 69px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.conta-caixa {
+    width: 100%;
+    max-width: 440px;
+    background: var(--card);
+    border: 1px solid var(--card-borda);
+    border-radius: 24px;
+    padding: 32px;
+}
+
+.abas {
+    display: flex;
+    gap: 6px;
+    padding: 5px;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    margin-bottom: 28px;
+}
+
+.aba {
+    flex: 1;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    color: var(--texto-mudo);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 999px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.aba.ativa {
+    background: var(--btn-bg);
+    color: var(--btn-texto);
+}
+
+
+.conta-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.conta-form[hidden] {
+    display: none;
+}
+
+.conta-form h1 {
+    font-size: 28px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.conta-sub {
+    font-size: 14px;
+    color: var(--texto-mudo);
+    margin-bottom: 24px;
+}
+
+.conta-form label {
+    font-size: 13px;
+    color: var(--texto-mudo);
+    margin-bottom: 6px;
+}
+
+.conta-form input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 14px;
+    color: var(--texto);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.conta-form input:focus {
+    border-color: var(--destaque);
+}
+
+.form-enviar {
+    width: 100%;
+    justify-content: space-between;
+    border: 0;
+    cursor: pointer;
+    font-family: inherit;
+    padding-left: 22px;
+}
+
+.troca {
+    margin-top: 20px;
+    font-size: 13px;
+    color: var(--texto-mudo);
+    text-align: center;
+}
+
+.troca button {
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    color: var(--destaque);
+    text-decoration: underline;
+}
+
+
+.aviso {
+    min-height: 20px;
+    margin-top: 16px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.aviso.erro {
+    color: #e5484d;
+}
+
+.aviso.ok {
+    color: #2da44e;
+}
+
+.nota-demo {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--texto-mudo);
+    text-align: center;
+}
+
+
+@media (max-width: 768px) {
+    .conta {
+        padding: 24px 16px;
+    }
+
+    .conta-caixa {
+        padding: 24px 20px;
+    }
+}
+
+
+.rodape {
+    border-top: 1px solid var(--borda);
+    background: var(--bg);
+    color: var(--texto);
+}
+
+.rodape-conteudo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 56px 40px 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.rodape-marca p {
+    margin-top: 16px;
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-mudo);
+}
+
+.rodape-col h3 {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--destaque);
+    margin-bottom: 16px;
+}
+
+.rodape-col a,
+.rodape-col p {
+    display: block;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--texto-suave);
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.rodape-col a:hover {
+    color: var(--destaque);
+}
+
+.rodape-redes {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.rodape-redes a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    border: 1px solid var(--borda);
+    border-radius: 50%;
+    transition: border-color 0.2s;
+}
+
+.rodape-redes a:hover {
+    border-color: var(--destaque);
+}
+
+.rodape-redes img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.rodape-base {
+    border-top: 1px solid var(--borda);
+}
+
+.rodape-base p {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 40px;
+    font-size: 13px;
+    color: var(--texto-mudo);
+}
+
+@media (max-width: 900px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .rodape-conteudo {
+        grid-template-columns: 1fr;
+        padding: 40px 20px 28px;
+        gap: 32px;
+    }
+
+    .rodape-base p {
+        padding: 18px 20px;
+    }
+}
+
+.social {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 22px 0 16px;
+    font-size: 12px;
+    color: var(--texto-mudo);
+}
+
+.btn-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--texto);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 999px;
+    padding: 12px 16px;
+    transition: border-color 0.2s;
+}
+
+.btn-social:hover {
+    border-color: var(--destaque);
+}
+
+.btn-social img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    font-size: 12px;
+    color: var(--texto-mudo);
+}
+
+.divisor::before,
+.divisor::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--borda);
+}
+
+.icone-apple-claro {
+    display: none;
+}
+
+[data-tema="claro"] .icone-apple-escuro {
+    display: none;
+}
+
+[data-tema="claro"] .icone-apple-claro {
+    display: block;
+}
+
+.header-transparente {
+    margin-bottom: -69px; 
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, rgba(var(--bg-rgb), 0.7), rgba(var(--bg-rgb), 0));
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-transparente.rolou,
+.header-transparente.aberto {
+    background-color: var(--bg);
+    background-image: none;
+    box-shadow: 0 1px 0 var(--borda);
+}
+
+.header-transparente + .hero {
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .header-transparente {
+        margin-bottom: -60px;
+    }
+
+    .header-transparente + .hero {
+        min-height: auto;
+    }
+}
